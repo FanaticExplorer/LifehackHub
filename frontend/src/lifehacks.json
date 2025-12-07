@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "title": "The Pomodoro Technique",
+    "category": "productivity",
+    "difficulty": "easy",
+    "content": "Work for 25 minutes, then take a strict 5-minute break. Repeat this cycle four times before taking a longer break of 15-30 minutes. This method prevents mental fatigue and maintains high focus levels throughout the day.",
+    "link": "https://francescocirillo.com/pages/pomodoro-technique"
+  },
+  {
+    "id": 2,
+    "title": "Military Sleep Method",
+    "category": "health",
+    "difficulty": "medium",
+    "content": "Relax your entire face, drop your shoulders, and exhale deeply to release chest tension. Clear your mind for 10 seconds by imagining a calm scene to fall asleep in under two minutes. This technique requires practice but is highly effective for insomnia.",
+    "link": "https://www.healthline.com/health/healthy-sleep/fall-asleep-fast"
+  },
+  {
+    "id": 3,
+    "title": "Browser Tab Restoration",
+    "category": "technology",
+    "difficulty": "easy",
+    "content": "If you accidentally close a browser tab, press Ctrl+Shift+T (Cmd+Shift+T on Mac) to instantly reopen it. This shortcut remembers the history of that specific tab, saving you from searching for it again. It works in Chrome, Firefox, and Edge.",
+    "link": "https://www.pcmag.com/how-to/how-to-reopen-a-closed-tab"
+  },
+  {
+    "id": 4,
+    "title": "Binder Clip Cable Organizer",
+    "category": "home",
+    "difficulty": "easy",
+    "content": "Clip large binder clips to the edge of your desk and thread your charging cables through the metal loops. This keeps cords from sliding off the table when unplugged and prevents tangling. It is a cheap alternative to expensive cable management systems.",
+    "link": "https://www.apartmenttherapy.com/binder-clip-hacks-256321"
+  },
+  {
+    "id": 5,
+    "title": "The Feynman Technique",
+    "category": "study",
+    "difficulty": "medium",
+    "content": "Explain a complex concept in simple terms as if teaching it to a child. If you get stuck, review the source material to fill the gap in your understanding. This exposes weaknesses in your knowledge and forces deep comprehension.",
+    "link": "https://fs.blog/feynman-technique/"
+  },
+  {
+    "id": 6,
+    "title": "The 50/30/20 Rule",
+    "category": "finance",
+    "difficulty": "medium",
+    "content": "Allocate 50% of your income to needs, 30% to wants, and 20% to savings or debt repayment. This simple framework automates budgeting without requiring you to track every single penny. It ensures you save consistently while still enjoying life.",
+    "link": "https://www.investopedia.com/ask/answers/022916/what-502030-budget-rule.asp"
+  },
+  {
+    "id": 7,
+    "title": "Box Breathing for Stress",
+    "category": "psychology",
+    "difficulty": "easy",
+    "content": "Inhale for 4 seconds, hold for 4 seconds, exhale for 4 seconds, and hold for 4 seconds. This rhythmic breathing pattern activates the parasympathetic nervous system to reduce anxiety immediately. It is commonly used by Navy SEALs to stay calm under pressure.",
+    "link": "https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/decrease-stress-with-breath/art-20485605"
+  },
+  {
+    "id": 8,
+    "title": "The Two-Minute Rule",
+    "category": "productivity",
+    "difficulty": "easy",
+    "content": "If a task takes less than two minutes to complete, do it immediately rather than adding it to a to-do list. This prevents small chores like washing a dish or sending an email from piling up. It keeps your mental workspace clear.",
+    "link": "https://jamesclear.com/how-to-stop-procrastinating"
+  },
+  {
+    "id": 9,
+    "title": "Cold Shower Finish",
+    "category": "health",
+    "difficulty": "hard",
+    "content": "End your daily shower with 30 seconds of cold water to boost circulation and alertness. This creates a hormetic stress response that can improve immune function and mood over time. It requires mental fortitude but increases resilience.",
+    "link": "https://www.hubermanlab.com/newsletter/the-science-and-use-of-cold-exposure-for-health-and-performance"
+  },
+  {
+    "id": 10,
+    "title": "Google Search Operators",
+    "category": "technology",
+    "difficulty": "medium",
+    "content": "Use quotation marks to search for exact phrases or 'site:' to search within a specific website URL. You can also use minus signs to exclude specific words from results. This filters out irrelevant content and drastically reduces research time.",
+    "link": "https://moz.com/learn/seo/search-operators"
+  },
+  {
+    "id": 11,
+    "title": "Fix Carpet Dents with Ice",
+    "category": "home",
+    "difficulty": "easy",
+    "content": "Place an ice cube on furniture indentations in your carpet and let it melt completely. As the fibers absorb the water, they will expand and fluff back up to their original shape. Blot the excess moisture with a towel afterwards.",
+    "link": "https://www.familyhandyman.com/project/how-to-remove-furniture-marks-from-carpet/"
+  },
+  {
+    "id": 12,
+    "title": "Spaced Repetition",
+    "category": "study",
+    "difficulty": "medium",
+    "content": "Review study material at increasing intervals over time rather than cramming all at once. This leverages the brain's forgetting curve to commit information to long-term memory efficiently. Apps like Anki automate this process.",
+    "link": "https://ncase.me/remember/"
+  },
+  {
+    "id": 13,
+    "title": "The 24-Hour Rule",
+    "category": "finance",
+    "difficulty": "easy",
+    "content": "Wait 24 hours before making any non-essential purchase to reduce impulse buying. This cooling-off period often results in realizing you do not actually need the item. For larger purchases, extend this rule to 30 days.",
+    "link": "https://www.thebalance.com/the-30-day-rule-to-control-impulse-spending-453905"
+  },
+  {
+    "id": 14,
+    "title": "Cognitive Reframing",
+    "category": "psychology",
+    "difficulty": "hard",
+    "content": "Identify negative thought patterns and consciously challenge them with evidence-based positive alternatives. This technique helps shift your mindset from victimhood to agency and reduces emotional distress. It is a core component of Cognitive Behavioral Therapy.",
+    "link": "https://www.psychologytoday.com/us/basics/cognitive-behavioral-therapy"
+  },
+  {
+    "id": 15,
+    "title": "Eat the Frog",
+    "category": "productivity",
+    "difficulty": "medium",
+    "content": "Tackle your most difficult and important task first thing in the morning. Completing it gives you momentum and eliminates the stress of procrastination for the rest of the day. Do not check emails before eating the frog.",
+    "link": "https://www.briantracy.com/blog/time-management/the-truth-about-frogs/"
+  },
+  {
+    "id": 16,
+    "title": "Airplane Mode Charging",
+    "category": "technology",
+    "difficulty": "easy",
+    "content": "Switch your phone to Airplane Mode while charging to reduce background battery drain from signal searching. This can significantly reduce the time needed to reach a full charge when you are in a rush. Just remember to turn it off afterwards.",
+    "link": "https://www.cnet.com/tech/mobile/does-airplane-mode-charge-your-phone-faster/"
+  },
+  {
+    "id": 17,
+    "title": "Steam Clean Microwave",
+    "category": "home",
+    "difficulty": "easy",
+    "content": "Heat a bowl of water with lemon slices in the microwave for 5 minutes until it boils and steams. The steam loosens dried food splatters, making them easy to wipe away with a cloth. The lemon leaves a fresh scent.",
+    "link": "https://www.goodhousekeeping.com/home/cleaning/a39269/how-to-clean-a-microwave/"
+  },
+  {
+    "id": 18,
+    "title": "Active Recall",
+    "category": "study",
+    "difficulty": "medium",
+    "content": "Test yourself without looking at your notes instead of just re-reading or highlighting them. This forces your brain to retrieve information, which strengthens neural pathways. It is scientifically proven to be more effective than passive review.",
+    "link": "https://aliabdaal.com/active-recall/"
+  },
+  {
+    "id": 19,
+    "title": "Morning Electrolytes",
+    "category": "health",
+    "difficulty": "easy",
+    "content": "Drink a glass of water with a pinch of sea salt immediately upon waking to replenish electrolytes lost during sleep. This jumpstarts your metabolism and improves brain fog better than coffee alone. Proper hydration is critical for morning energy.",
+    "link": "https://www.mindbodygreen.com/articles/drinking-salt-water-in-morning"
+  },
+  {
+    "id": 20,
+    "title": "Subscription Audit",
+    "category": "finance",
+    "difficulty": "medium",
+    "content": "Review your bank statements quarterly specifically to cancel unused recurring subscriptions. These vampire costs often go unnoticed but add up to significant yearly sums. Use a virtual card for trials to prevent auto-renewal.",
+    "link": "https://www.nerdwallet.com/article/finance/how-to-stop-subscription-leakage"
+  },
+  {
+    "id": 21,
+    "title": "The Eisenhower Matrix",
+    "category": "productivity",
+    "difficulty": "medium",
+    "content": "Categorize tasks into four quadrants: urgent and important, important but not urgent, urgent but not important, and neither. This helps you decide what to do immediately, schedule for later, delegate, or delete entirely. It prevents you from confusing busyness with effectiveness.",
+    "link": "https://www.eisenhower.me/eisenhower-matrix/"
+  },
+  {
+    "id": 22,
+    "title": "The 20-20-20 Rule",
+    "category": "health",
+    "difficulty": "easy",
+    "content": "To prevent digital eye strain, every 20 minutes look at something 20 feet away for at least 20 seconds. This relaxes the focusing muscle inside the eye and reduces fatigue from staring at screens. It is essential for office workers.",
+    "link": "https://www.aao.org/eye-health/tips-prevention/computer-usage"
+  },
+  {
+    "id": 23,
+    "title": "Gmail Infinite Aliases",
+    "category": "technology",
+    "difficulty": "easy",
+    "content": "Add a plus sign and any word after your username (e.g., name+newsletter@gmail.com) to create infinite email aliases. Emails will still go to your main inbox, but you can easily filter them or see who sold your data. This works with standard Gmail accounts.",
+    "link": "https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html"
+  },
+  {
+    "id": 24,
+    "title": "Vertical Folding Method",
+    "category": "home",
+    "difficulty": "medium",
+    "content": "Fold clothes into small rectangles that stand up vertically in drawers rather than stacking them. This allows you to see every item at once without messing up the pile. It significantly saves space and reduces clutter.",
+    "link": "https://konmari.com/folding-guide/"
+  },
+  {
+    "id": 25,
+    "title": "The Blurting Method",
+    "category": "study",
+    "difficulty": "hard",
+    "content": "Read a section of your textbook, close it, and quickly write down everything you remember on a blank sheet. Open the book again to see what you missed and highlight those gaps. This is an aggressive form of active recall.",
+    "link": "https://www.savethestudent.org/extra-guides/revision-tips.html"
+  },
+  {
+    "id": 26,
+    "title": "Zero-Based Budgeting",
+    "category": "finance",
+    "difficulty": "medium",
+    "content": "Assign every single dollar of your income a specific job (expenses, savings, or debt) until you have zero dollars left unassigned. This ensures no money is wasted on mindless spending. It requires tracking every transaction.",
+    "link": "https://www.ramseysolutions.com/budgeting/how-to-make-a-zero-based-budget"
+  },
+  {
+    "id": 27,
+    "title": "The 5-Second Rule",
+    "category": "psychology",
+    "difficulty": "easy",
+    "content": "When you have an impulse to act on a goal, count backwards 5-4-3-2-1 and physically move before your brain kills the idea. This simple countdown interrupts hesitation and self-doubt loops. It helps build confidence through action.",
+    "link": "https://melrobbins.com/the-5-second-rule/"
+  },
+  {
+    "id": 28,
+    "title": "Time Blocking",
+    "category": "productivity",
+    "difficulty": "medium",
+    "content": "Divide your day into blocks of time dedicated to specific tasks or groups of tasks. Unlike a to-do list, this tells you *when* you will do the work, preventing tasks from bleeding into one another. It forces realistic planning.",
+    "link": "https://todoist.com/productivity-methods/time-blocking"
+  },
+  {
+    "id": 29,
+    "title": "Morning Sunlight Exposure",
+    "category": "health",
+    "difficulty": "easy",
+    "content": "View natural sunlight for 10-20 minutes within the first hour of waking up. This signals your circadian rhythm to release cortisol for energy and prepares your body to release melatonin later for sleep. Do not wear sunglasses during this time.",
+    "link": "https://hubermanlab.com/sleep-toolkit-of-tools-for-optimizing-sleep-and-sleep-wake-timing/"
+  },
+  {
+    "id": 30,
+    "title": "Guest Wi-Fi QR Code",
+    "category": "technology",
+    "difficulty": "easy",
+    "content": "Generate a QR code containing your Wi-Fi credentials and print it out for guests. They can scan it with their phone camera to join the network instantly without typing long passwords. There are many free websites that create these codes.",
+    "link": "https://www.howtogeek.com/devops/how-to-create-a-qr-code-for-your-wi-fi-network/"
+  },
+  {
+    "id": 31,
+    "title": "Remove Pet Hair with Squeegee",
+    "category": "home",
+    "difficulty": "easy",
+    "content": "Drag a window squeegee across carpets or upholstery to pull up embedded pet hair. The rubber blade grabs fur that vacuum cleaners often miss. It is a quick and chemical-free cleaning solution.",
+    "link": "https://www.thespruce.com/remove-pet-hair-from-furniture-and-clothes-2647732"
+  },
+  {
+    "id": 32,
+    "title": "Brown Noise for Focus",
+    "category": "study",
+    "difficulty": "easy",
+    "content": "Listen to brown noise (lower frequency than white noise) while studying to mask distracting background sounds. Many people find it more soothing and better for concentration than silence or music. It can calm a racing mind.",
+    "link": "https://www.nytimes.com/interactive/2022/09/23/well/mind/brown-noise.html"
+  },
+  {
+    "id": 33,
+    "title": "Debt Snowball Method",
+    "category": "finance",
+    "difficulty": "medium",
+    "content": "Pay off debts from smallest balance to largest, regardless of interest rate. Knocking out small debts quickly provides psychological wins that motivate you to keep going. It prioritizes behavior modification over pure math.",
+    "link": "https://www.investopedia.com/terms/s/snowball.asp"
+  },
+  {
+    "id": 34,
+    "title": "Gratitude Journaling",
+    "category": "psychology",
+    "difficulty": "easy",
+    "content": "Write down three things you are grateful for every morning or evening. This trains your brain to scan the world for positives rather than threats, improving overall happiness. The items can be as simple as good coffee or sunshine.",
+    "link": "https://greatergood.berkeley.edu/article/item/tips_for_keeping_a_gratitude_journal"
+  },
+  {
+    "id": 35,
+    "title": "Parkinson's Law",
+    "category": "productivity",
+    "difficulty": "medium",
+    "content": "Artificially shorten your deadlines because 'work expands to fill the time available for its completion.' If you give yourself a week for a two-hour task, it will take a week. Tight deadlines increase focus and efficiency.",
+    "link": "https://www.atlassian.com/blog/productivity/what-is-parkinsons-law"
+  },
+  {
+    "id": 36,
+    "title": "Intermittent Fasting",
+    "category": "health",
+    "difficulty": "medium",
+    "content": "Limit your eating window to 8 hours a day (e.g., 12 PM to 8 PM) and fast for the remaining 16. This can simplify meal planning, improve insulin sensitivity, and aid in weight management. Always consult a doctor before starting.",
+    "link": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/intermittent-fasting-what-is-it-and-how-does-it-work"
+  },
+  {
+    "id": 37,
+    "title": "YouTube Keyboard Shortcuts",
+    "category": "technology",
+    "difficulty": "easy",
+    "content": "Use 'J' to rewind 10 seconds, 'K' to pause/play, and 'L' to fast forward 10 seconds on YouTube. You can also use 'M' to mute and 'F' for fullscreen. These allow for much faster navigation without using the mouse.",
+    "link": "https://support.google.com/youtube/answer/7631406?hl=ru"
+  },
+  {
+    "id": 38,
+    "title": "Unclog Drains Naturally",
+    "category": "home",
+    "difficulty": "easy",
+    "content": "Pour a cup of baking soda followed by a cup of vinegar down a slow drain and cover it. Let it fizz for 15 minutes, then flush with a kettle of boiling water. This clears minor clogs without harsh chemicals.",
+    "link": "https://www.bobvila.com/articles/how-to-unclog-a-drain-with-baking-soda/"
+  },
+  {
+    "id": 39,
+    "title": "Handwriting Notes",
+    "category": "study",
+    "difficulty": "medium",
+    "content": "Take notes by hand rather than typing them on a laptop. The slower process of writing forces your brain to summarize and process information, leading to better conceptual understanding. Laptops often lead to mindless transcription.",
+    "link": "https://www.npr.org/2016/04/17/474525392/attention-students-put-your-laptops-away"
+  },
+  {
+    "id": 40,
+    "title": "Library Digital Perks",
+    "category": "finance",
+    "difficulty": "easy",
+    "content": "Use your local library card to access free audiobooks, ebooks, and movies through apps like Libby or Kanopy. This can replace paid subscriptions like Audible or Netflix. It is an underutilized free resource available to most residents.",
+    "link": "https://www.nypl.org/help/about-nypl/library-card-perks"
+  },
+  {
+    "id": 41,
+    "title": "Digital Detox",
+    "category": "psychology",
+    "difficulty": "hard",
+    "content": "Designate one day a week or specific hours in the evening as 'screen-free time'. This reduces dopamine dependency and improves relationship quality and sleep. Start with just one hour before bed.",
+    "link": "https://my.clevelandclinic.org/health/articles/23429-digital-detox"
+  },
+  {
+    "id": 42,
+    "title": "Batching Emails",
+    "category": "productivity",
+    "difficulty": "medium",
+    "content": "Check email only two or three times a day at set intervals instead of keeping the tab open. Constant notifications break flow state and increase cognitive load. Process the inbox fully during these batches.",
+    "link": "https://tim.blog/2007/10/25/the-not-to-do-list-9-habits-to-stop-now/"
+  },
+  {
+    "id": 43,
+    "title": "Standing on One Leg",
+    "category": "health",
+    "difficulty": "easy",
+    "content": "Practice standing on one leg while brushing your teeth to improve balance and core stability. Balance is a key longevity indicator and tends to decline with age. It adds a functional workout to an existing habit.",
+    "link": "https://www.bbc.com/news/health-61899839"
+  },
+  {
+    "id": 44,
+    "title": "Text Navigation Shortcuts",
+    "category": "technology",
+    "difficulty": "easy",
+    "content": "Hold Ctrl (or Option on Mac) while using arrow keys to jump the cursor by whole words instead of characters. Add Shift to highlight words instantly. This makes editing text and correcting typos significantly faster.",
+    "link": "https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec"
+  },
+  {
+    "id": 45,
+    "title": "Oil for Sticker Residue",
+    "category": "home",
+    "difficulty": "easy",
+    "content": "Use cooking oil (olive or vegetable) to remove sticky residue left by price tags or labels on glass and plastic. Rub the oil on the spot, let it sit for a few minutes, and wipe clean. It works better than soap and water.",
+    "link": "https://www.architecturaldigest.com/story/how-to-remove-sticker-residue"
+  },
+  {
+    "id": 46,
+    "title": "Leitner System",
+    "category": "study",
+    "difficulty": "medium",
+    "content": "Use five boxes for flashcards; correctly answered cards move to the next box (reviewed less often), while incorrect ones return to the start. This optimizes spaced repetition physically. It ensures you focus effort on what you do not know.",
+    "link": "https://us.cambridge.org/elt/blog/2022/10/25/leitner-system-learning-vocabulary/"
+  },
+  {
+    "id": 47,
+    "title": "Price Match Guarantee",
+    "category": "finance",
+    "difficulty": "medium",
+    "content": "Before buying electronics or appliances, check if major retailers will match a lower price found online. Many stores like Best Buy or Target will match competitors like Amazon instantly at the register. Just show the listing on your phone.",
+    "link": "https://www.nerdwallet.com/article/finance/price-match-guarantees"
+  },
+  {
+    "id": 48,
+    "title": "5-4-3-2-1 Grounding",
+    "category": "psychology",
+    "difficulty": "easy",
+    "content": "To stop a panic attack, identify 5 things you see, 4 you feel, 3 you hear, 2 you smell, and 1 you taste. This engages your senses and pulls your focus away from anxious thoughts and back to the present moment.",
+    "link": "https://www.urmc.rochester.edu/behavioral-health-partners/bhp-blog/april-2018/5-4-3-2-1-coping-technique-for-anxiety.aspx"
+  },
+  {
+    "id": 49,
+    "title": "Walking Meetings",
+    "category": "productivity",
+    "difficulty": "medium",
+    "content": "Take phone calls or one-on-one meetings while walking rather than sitting in a conference room. The physical activity increases blood flow to the brain and can boost creativity. It also breaks up the sedentary nature of office work.",
+    "link": "https://hbr.org/2015/08/how-to-do-walking-meetings-right"
+  },
+  {
+    "id": 50,
+    "title": "Clean Desktop Screenshot",
+    "category": "technology",
+    "difficulty": "easy",
+    "content": "On Windows, use 'Win + Shift + S' to grab a specific area; on Mac, use 'Cmd + Shift + 4'. This saves you from editing out the whole screen and taskbar later. It copies the image directly to your clipboard for instant pasting.",
+    "link": "https://www.pcmag.com/news/how-to-take-a-screenshot-on-any-device"
+  }
+]
