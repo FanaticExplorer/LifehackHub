@@ -13,6 +13,12 @@ export default {
     return {
       toggleTheme
     }
+  },
+  
+  methods: {
+    goToRandom() {
+      this.$router.push('/random')
+    }
   }
 }
 </script>
@@ -22,6 +28,9 @@ export default {
     <v-app-bar color="primary">
       <v-app-bar-title>LifehackHub</v-app-bar-title>
       <v-spacer></v-spacer>
+      <v-btn @click="goToRandom" prepend-icon="mdi-dice-5">
+        Random
+      </v-btn>
       <v-btn icon @click="toggleTheme">
         <v-icon>mdi-palette</v-icon>
       </v-btn>
