@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="py-8">
     <v-row class="mt-5">
       <v-col cols="12">
         <v-btn 
@@ -7,13 +7,19 @@
           color="primary" 
           variant="text"
           prepend-icon="mdi-arrow-left"
-          class="mb-3"
+          class="mb-4"
         >
           Back to Categories
         </v-btn>
         
-        <h1 class="text-h3 text-center mb-5 text-capitalize">{{ displayTitle }}</h1>
-        <p class="text-center text-h6 mb-5">{{ lifehacks.length }} lifehacks</p>
+        <h1 class="text-h3 text-center mb-3 font-weight-bold text-capitalize">
+          {{ displayTitle }}
+        </h1>
+        <div class="text-center mb-8">
+          <v-chip color="primary" variant="tonal">
+            {{ lifehacks.length }} lifehacks
+          </v-chip>
+        </div>
       </v-col>
     </v-row>
 
@@ -27,37 +33,43 @@
       >
         <v-card 
           @click="goToLifehack(lifehack.id)" 
-          class="hover-card"
+          class="lifehack-card"
           elevation="2"
+          hover
         >
-          <v-card-title>{{ lifehack.title }}</v-card-title>
-          
-          <v-card-subtitle class="mt-2">
-            <v-icon 
-              size="small" 
-              :color="getCategoryColor(lifehack.category)"
-              class="mr-1"
-            >
+          <v-card-title class="d-flex align-center pa-4">
+            <v-icon :color="getCategoryColor(lifehack.category)" class="mr-3" size="large">
               {{ getCategoryIcon(lifehack.category) }}
             </v-icon>
-            {{ lifehack.category }}
-          </v-card-subtitle>
+            <span>{{ lifehack.title }}</span>
+          </v-card-title>
           
-          <v-card-text>
+          <v-divider></v-divider>
+          
+          <v-card-text class="py-4">
             {{ lifehack.content.substring(0, 120) }}...
           </v-card-text>
           
-          <v-card-actions>
-            <v-chip :color="getDifficultyColor(lifehack.difficulty)" size="small">
+          <v-card-actions class="px-4 pb-4">
+            <v-chip 
+              size="small" 
+              :color="getCategoryColor(lifehack.category)"
+              variant="tonal"
+            >
+              {{ lifehack.category }}
+            </v-chip>
+            <v-chip :color="getDifficultyColor(lifehack.difficulty)" size="small" class="ml-2">
               {{ lifehack.difficulty }}
             </v-chip>
             <v-spacer></v-spacer>
             <v-btn 
               variant="text" 
               size="small"
+              color="primary"
               @click.stop="goToLifehack(lifehack.id)"
+              append-icon="mdi-arrow-right"
             >
-              Read More
+              Read
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -142,15 +154,17 @@ export default {
 </script>
 
 <style scoped>
-.hover-card {
+.lifehack-card {
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: all 0.2s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
+  border-left: 4px solid transparent;
 }
 
-.hover-card:hover {
+.lifehack-card:hover {
+  border-left-color: rgb(var(--v-theme-primary));
   transform: translateY(-4px);
 }
 </style>

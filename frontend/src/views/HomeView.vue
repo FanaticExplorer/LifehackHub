@@ -1,8 +1,13 @@
 <template>
-  <v-container>
+  <v-container class="py-8">
     <v-row class="mt-5">
       <v-col cols="12">
-        <h1 class="text-h3 text-center mb-5">Lifehack Categories</h1>
+        <h1 class="text-h3 text-center mb-3 font-weight-bold">
+          Lifehack Categories
+        </h1>
+        <p class="text-center text-subtitle-1 mb-8 text-medium-emphasis">
+          Explore practical tips to improve your daily life
+        </p>
         
         <v-text-field
           v-model="searchQuery"
@@ -10,47 +15,58 @@
           prepend-inner-icon="mdi-magnify"
           variant="outlined"
           clearable
-          class="mb-5"
+          class="mb-5 search-field"
+          color="primary"
         ></v-text-field>
       </v-col>
     </v-row>
 
     <v-row v-if="searchQuery && searchResults.length > 0">
       <v-col cols="12">
-        <h2 class="text-h5 mb-3">Search Results ({{ searchResults.length }})</h2>
+        <h2 class="text-h5 mb-4">
+          <v-icon class="mr-2" color="primary">mdi-text-search</v-icon>
+          Search Results ({{ searchResults.length }})
+        </h2>
         
-        <v-list>
-          <v-list-item
-            v-for="lifehack in searchResults"
-            :key="lifehack.id"
-            @click="goToLifehack(lifehack.id)"
-            class="hover-list-item"
-          >
-            <template v-slot:prepend>
-              <v-icon :color="getCategoryColor(lifehack.category)">
-                {{ getCategoryIcon(lifehack.category) }}
-              </v-icon>
-            </template>
-            
-            <v-list-item-title>{{ lifehack.title }}</v-list-item-title>
-            
-            <v-list-item-subtitle>
-              {{ lifehack.category }}
-            </v-list-item-subtitle>
+        <v-card elevation="2">
+          <v-list>
+            <v-list-item
+              v-for="lifehack in searchResults"
+              :key="lifehack.id"
+              @click="goToLifehack(lifehack.id)"
+              class="result-item"
+            >
+              <template v-slot:prepend>
+                <v-avatar :color="getCategoryColor(lifehack.category)" size="40">
+                  <v-icon color="white" size="small">
+                    {{ getCategoryIcon(lifehack.category) }}
+                  </v-icon>
+                </v-avatar>
+              </template>
+              
+              <v-list-item-title class="font-weight-medium">
+                {{ lifehack.title }}
+              </v-list-item-title>
+              
+              <v-list-item-subtitle>
+                {{ lifehack.category }}
+              </v-list-item-subtitle>
 
-            <template v-slot:append>
-              <v-chip :color="getDifficultyColor(lifehack.difficulty)" size="small">
-                {{ lifehack.difficulty }}
-              </v-chip>
-            </template>
-          </v-list-item>
-        </v-list>
+              <template v-slot:append>
+                <v-chip :color="getDifficultyColor(lifehack.difficulty)" size="small">
+                  {{ lifehack.difficulty }}
+                </v-chip>
+              </template>
+            </v-list-item>
+          </v-list>
+        </v-card>
       </v-col>
     </v-row>
 
     <v-row v-else-if="searchQuery && searchResults.length === 0">
-      <v-col cols="12" class="text-center">
-        <p class="text-h6">No lifehacks found for "{{ searchQuery }}"</p>
+      <v-col cols="12" class="text-center py-10">
+        <v-icon size="64" color="grey">mdi-emoticon-sad-outline</v-icon>
+        <p class="text-h6 mt-4">No lifehacks found for "{{ searchQuery }}"</p>
       </v-col>
     </v-row>
 
@@ -63,15 +79,18 @@
       >
         <v-card 
           @click="goToCategory('all')" 
-          class="hover-card text-center pa-5"
+          class="category-card"
           elevation="2"
+          hover
         >
-          <v-icon size="64" color="primary">
-            mdi-view-grid
-          </v-icon>
-          <v-card-title>All Lifehacks</v-card-title>
-          <v-card-text>
-            {{ store.allLifehacks.length }} lifehacks
+          <v-card-text class="text-center pa-6">
+            <v-icon size="56" color="primary" class="mb-3">
+              mdi-view-grid
+            </v-icon>
+            <div class="text-h6 font-weight-bold mb-2">All Lifehacks</div>
+            <div class="text-caption text-medium-emphasis">
+              {{ store.allLifehacks.length }} lifehacks
+            </div>
           </v-card-text>
         </v-card>
       </v-col>
@@ -86,15 +105,20 @@
       >
         <v-card 
           @click="goToCategory(category)" 
-          class="hover-card text-center pa-5"
+          class="category-card"
           elevation="2"
+          hover
         >
-          <v-icon size="64" :color="getCategoryColor(category)">
-            {{ getCategoryIcon(category) }}
-          </v-icon>
-          <v-card-title class="text-capitalize">{{ category }}</v-card-title>
-          <v-card-text>
-            {{ getCategoryCount(category) }} lifehacks
+          <v-card-text class="text-center pa-6">
+            <v-icon size="56" :color="getCategoryColor(category)" class="mb-3">
+              {{ getCategoryIcon(category) }}
+            </v-icon>
+            <div class="text-h6 font-weight-bold mb-2 text-capitalize">
+              {{ category }}
+            </div>
+            <div class="text-caption text-medium-emphasis">
+              {{ getCategoryCount(category) }} lifehacks
+            </div>
           </v-card-text>
         </v-card>
       </v-col>
@@ -179,16 +203,28 @@ export default {
 </script>
 
 <style scoped>
-.hover-card {
-  cursor: pointer;
-  transition: transform 0.2s;
+.search-field {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.hover-card:hover {
+.category-card {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+.category-card:hover {
+  border-left-color: rgb(var(--v-theme-primary));
   transform: translateY(-4px);
 }
 
-.hover-list-item {
+.result-item {
   cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.result-item:hover {
+  background-color: rgba(var(--v-theme-primary), 0.08);
 }
 </style>

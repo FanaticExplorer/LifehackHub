@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="py-8">
     <v-row class="mt-5" v-if="lifehack">
       <v-col cols="12">
         <v-btn 
@@ -7,47 +7,52 @@
           color="primary" 
           variant="text"
           prepend-icon="mdi-arrow-left"
-          class="mb-3"
+          class="mb-4"
         >
           Back
         </v-btn>
       </v-col>
 
-      <v-col cols="12" md="8" offset-md="2">
+      <v-col cols="12" md="10" offset-md="1" lg="8" offset-lg="2">
         <v-card elevation="3">
-          <v-card-title class="text-h4 pa-5">
-            {{ lifehack.title }}
+          <v-card-title class="text-h4 pa-6 d-flex align-center">
+            <v-icon :color="getCategoryColor(lifehack.category)" size="x-large" class="mr-4">
+              {{ getCategoryIcon(lifehack.category) }}
+            </v-icon>
+            <span>{{ lifehack.title }}</span>
           </v-card-title>
 
-          <v-card-subtitle class="px-5 pb-3">
+          <v-card-subtitle class="px-6 pb-4">
             <v-chip 
               :color="getCategoryColor(lifehack.category)" 
-              class="mr-2"
+              class="mr-3"
               @click="goToCategory(lifehack.category)"
+              variant="tonal"
             >
-              <v-icon start>{{ getCategoryIcon(lifehack.category) }}</v-icon>
               {{ lifehack.category }}
             </v-chip>
 
-            <v-chip :color="getDifficultyColor(lifehack.difficulty)">
+            <v-chip 
+              :color="getDifficultyColor(lifehack.difficulty)"
+            >
               {{ lifehack.difficulty }}
             </v-chip>
           </v-card-subtitle>
 
           <v-divider></v-divider>
 
-          <v-card-text class="pa-5 text-body-1">
+          <v-card-text class="px-6 py-6 text-body-1">
             {{ lifehack.content }}
           </v-card-text>
 
-          <v-divider></v-divider>
+          <v-divider v-if="lifehack.link"></v-divider>
 
-          <v-card-actions class="pa-5" v-if="lifehack.link">
+          <v-card-actions class="px-6 py-5" v-if="lifehack.link">
             <v-btn
               :href="lifehack.link"
               target="_blank"
               color="primary"
-              variant="outlined"
+              variant="flat"
               prepend-icon="mdi-open-in-new"
               block
             >
@@ -60,6 +65,7 @@
 
     <v-row v-else>
       <v-col cols="12" class="text-center mt-10">
+        <v-icon size="80" color="grey" class="mb-5">mdi-alert-circle-outline</v-icon>
         <h2 class="text-h4 mb-5">Lifehack not found</h2>
         <v-btn @click="goBack" color="primary">
           Go Back
@@ -133,3 +139,6 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+</style>
