@@ -90,10 +90,17 @@ export const useLifehacksStore = defineStore('lifehacks', {
       }
     },
 
-    randomLifehack(state) {
-      const totalLifehacks = state.lifehacks.length
+  },
+
+  actions: {
+    pickRandomLifehack() {
+      const totalLifehacks = this.lifehacks.length
+      if (totalLifehacks === 0) {
+        return null
+      }
+
       const randomIndex = Math.floor(Math.random() * totalLifehacks)
-      return state.lifehacks[randomIndex]
+      return this.lifehacks[randomIndex]
     }
   }
 })

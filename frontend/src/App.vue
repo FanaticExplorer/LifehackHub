@@ -16,8 +16,13 @@ export default {
   },
   
   methods: {
+    goToHome() {
+      this.$router.push('/')
+    },
+
     goToRandom() {
-      this.$router.push('/random')
+      const randomTime = Date.now()
+      this.$router.push('/random?t=' + randomTime)
     }
   }
 }
@@ -28,8 +33,11 @@ export default {
     <v-app-bar color="primary">
       <v-app-bar-title>LifehackHub</v-app-bar-title>
       <v-spacer></v-spacer>
-      <v-btn @click="goToRandom" prepend-icon="mdi-dice-5">
-        Random
+      <v-btn icon @click="goToHome">
+        <v-icon>mdi-home</v-icon>
+      </v-btn>
+      <v-btn icon @click="goToRandom">
+        <v-icon>mdi-dice-5</v-icon>
       </v-btn>
       <v-btn icon @click="toggleTheme">
         <v-icon>mdi-palette</v-icon>
