@@ -15,11 +15,19 @@
 
       <v-col cols="12" md="10" offset-md="1" lg="8" offset-lg="2">
         <v-card elevation="3">
-          <v-card-title class="text-h4 pa-6 d-flex align-center">
-            <v-icon :color="getCategoryColor(lifehack.category)" size="x-large" class="mr-4">
-              {{ getCategoryIcon(lifehack.category) }}
-            </v-icon>
-            <span>{{ lifehack.title }}</span>
+          <v-card-title class="pa-6 d-flex align-center justify-space-between">
+            <div class="d-flex align-center">
+              <v-icon :color="getCategoryColor(lifehack.category)" size="x-large" class="mr-4">
+                {{ getCategoryIcon(lifehack.category) }}
+              </v-icon>
+              <span class="text-h4">{{ lifehack.title }}</span>
+            </div>
+            <v-btn
+              :icon="isLiked(lifehack.id) ? 'mdi-heart' : 'mdi-heart-outline'"
+              :color="isLiked(lifehack.id) ? 'red' : 'grey'"
+              variant="text"
+              @click="toggleLike(lifehack.id)"
+            ></v-btn>
           </v-card-title>
 
           <v-card-subtitle class="px-6 pb-4">
@@ -47,7 +55,10 @@
 
           <v-divider v-if="lifehack.link"></v-divider>
 
-          <v-card-actions class="px-6 py-5" v-if="lifehack.link">
+          <v-card-actions
+            v-if="lifehack.link"
+            class="px-6 py-5"
+          >
             <v-btn
               :href="lifehack.link"
               target="_blank"
@@ -77,6 +88,7 @@
 
 <script>
 import { useLifehacksStore } from '../stores/lifehacksStore'
+import { useLikesStore } from '../stores/likesStore'
 
 export default {
   name: 'LifehackView',
@@ -84,6 +96,10 @@ export default {
   computed: {
     store() {
       return useLifehacksStore()
+    },
+
+    likesStore() {
+      return useLikesStore()
     },
 
     lifehackId() {
@@ -102,6 +118,15 @@ export default {
 
     goToCategory(category) {
       this.$router.push('/category/' + category)
+    },
+
+    toggleLike(id) {
+      this.likesStore.toggleLike(id)
+    },
+
+    isLiked(id) {
+      const numericId = parseInt(id)
+      return this.likesStore.likedIds.includes(numericId)
     },
 
     getCategoryIcon(category) {

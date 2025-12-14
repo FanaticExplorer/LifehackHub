@@ -35,7 +35,7 @@
           :title="lifehack.title"
           :category="lifehack.category"
           :content="lifehack.content"
-          :isLiked="false"
+          :isLiked="isLiked(lifehack.id)"
           @click="goToLifehack(lifehack.id)"
           @toggle-like="toggleLike(lifehack.id)"
         />
@@ -46,6 +46,7 @@
 
 <script>
 import { useLifehacksStore } from '../stores/lifehacksStore'
+import { useLikesStore } from '../stores/likesStore'
 import LifehackCard from '../components/lifehack/LifehackCard.vue'
 
 export default {
@@ -58,6 +59,10 @@ export default {
   computed: {
     store() {
       return useLifehacksStore()
+    },
+
+    likesStore() {
+      return useLikesStore()
     },
 
     category() {
@@ -89,7 +94,12 @@ export default {
     },
 
     toggleLike(id) {
-      console.log('Toggle like for lifehack:', id)
+      this.likesStore.toggleLike(id)
+    },
+
+    isLiked(id) {
+      const numericId = parseInt(id)
+      return this.likesStore.likedIds.includes(numericId)
     }
   }
 }

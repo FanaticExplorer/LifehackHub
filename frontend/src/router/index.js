@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import CategoryView from '../views/CategoryView.vue'
 import LifehackView from '../views/LifehackView.vue'
 import RandomView from '../views/RandomView.vue'
+import SearchView from '../views/SearchView.vue'
+import FavoritesView from '../views/FavoritesView.vue'
 
 const routes = [
   {
@@ -24,6 +26,16 @@ const routes = [
     path: '/random',
     name: 'Random',
     component: RandomView
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: SearchView
+  },
+  {
+    path: '/favorites',
+    name: 'Favorites',
+    component: FavoritesView
   }
 ]
 

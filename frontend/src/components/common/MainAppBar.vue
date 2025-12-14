@@ -23,6 +23,14 @@ export default {
     goToRandom() {
       const randomTime = Date.now()
       this.$router.push('/random?t=' + randomTime)
+    },
+
+    goToSearch() {
+      this.$router.push('/search')
+    },
+
+    goToFavorites() {
+      this.$router.push('/favorites')
     }
   }
 }
@@ -48,6 +56,20 @@ export default {
       variant="text"
     >
       <v-icon>mdi-dice-5</v-icon>
+    </v-btn>
+    <v-btn 
+      icon 
+      @click="goToSearch" 
+      variant="text"
+    >
+      <v-icon>mdi-magnify</v-icon>
+    </v-btn>
+    <v-btn 
+      icon 
+      @click="goToFavorites" 
+      variant="text"
+    >
+      <v-icon>mdi-heart</v-icon>
     </v-btn>
     <v-btn 
       icon 
