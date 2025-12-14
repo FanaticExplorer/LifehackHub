@@ -31,48 +31,14 @@
         md="6"
         lg="4"
       >
-        <v-card 
-          @click="goToLifehack(lifehack.id)" 
-          class="lifehack-card"
-          elevation="2"
-          hover
-        >
-          <v-card-title class="d-flex align-center pa-4">
-            <v-icon :color="getCategoryColor(lifehack.category)" class="mr-3" size="large">
-              {{ getCategoryIcon(lifehack.category) }}
-            </v-icon>
-            <span>{{ lifehack.title }}</span>
-          </v-card-title>
-          
-          <v-divider></v-divider>
-          
-          <v-card-text class="py-4">
-            {{ lifehack.content.substring(0, 120) }}...
-          </v-card-text>
-          
-          <v-card-actions class="px-4 pb-4">
-            <v-chip 
-              size="small" 
-              :color="getCategoryColor(lifehack.category)"
-              variant="tonal"
-            >
-              {{ lifehack.category }}
-            </v-chip>
-            <v-chip :color="getDifficultyColor(lifehack.difficulty)" size="small" class="ml-2">
-              {{ lifehack.difficulty }}
-            </v-chip>
-            <v-spacer></v-spacer>
-            <v-btn 
-              variant="text" 
-              size="small"
-              color="primary"
-              @click.stop="goToLifehack(lifehack.id)"
-              append-icon="mdi-arrow-right"
-            >
-              Read
-            </v-btn>
-          </v-card-actions>
-        </v-card>
+        <LifehackCard
+          :title="lifehack.title"
+          :category="lifehack.category"
+          :content="lifehack.content"
+          :isLiked="false"
+          @click="goToLifehack(lifehack.id)"
+          @toggle-like="toggleLike(lifehack.id)"
+        />
       </v-col>
     </v-row>
   </v-container>
@@ -80,9 +46,14 @@
 
 <script>
 import { useLifehacksStore } from '../stores/lifehacksStore'
+import LifehackCard from '../components/lifehack/LifehackCard.vue'
 
 export default {
   name: 'CategoryView',
+
+  components: {
+    LifehackCard
+  },
   
   computed: {
     store() {
@@ -117,54 +88,12 @@ export default {
       this.$router.push('/lifehack/' + id)
     },
 
-    getCategoryIcon(category) {
-      const icons = {
-        productivity: 'mdi-lightning-bolt',
-        health: 'mdi-heart-pulse',
-        technology: 'mdi-laptop',
-        home: 'mdi-home',
-        study: 'mdi-book-open-page-variant',
-        finance: 'mdi-cash',
-        psychology: 'mdi-brain'
-      }
-      return icons[category] || 'mdi-star'
-    },
-
-    getCategoryColor(category) {
-      const colors = {
-        productivity: 'blue',
-        health: 'red',
-        technology: 'purple',
-        home: 'green',
-        study: 'orange',
-        finance: 'teal',
-        psychology: 'pink'
-      }
-      return colors[category] || 'grey'
-    },
-
-    getDifficultyColor(difficulty) {
-      if (difficulty === 'easy') return 'success'
-      if (difficulty === 'medium') return 'warning'
-      if (difficulty === 'hard') return 'error'
-      return 'grey'
+    toggleLike(id) {
+      console.log('Toggle like for lifehack:', id)
     }
   }
 }
 </script>
 
 <style scoped>
-.lifehack-card {
-  cursor: pointer;
-  transition: all 0.2s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  border-left: 4px solid transparent;
-}
-
-.lifehack-card:hover {
-  border-left-color: rgb(var(--v-theme-primary));
-  transform: translateY(-4px);
-}
 </style>
