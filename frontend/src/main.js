@@ -5,9 +5,11 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.css'
+import './assets/theme.css'
 
 import App from './App.vue'
 import router from './router'
+import { lifehackThemes } from './utils/themePalettes'
 
 const vuetify = createVuetify({
   components,
@@ -17,6 +19,7 @@ const vuetify = createVuetify({
   },
   theme: {
     defaultTheme: 'dark',
+    themes: lifehackThemes,
   },
 })
 

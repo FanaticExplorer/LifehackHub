@@ -31,4 +31,11 @@ export default {
   max-width: 600px;
   margin: 0 auto;
 }
+
+.search-field :deep(.v-field) {
+  border-radius: 999px;
+  background-color: var(--lhh-input-bg);
+  border: 1px solid var(--lhh-input-border);
+  box-shadow: var(--lhh-input-shadow);
+}
 </style>

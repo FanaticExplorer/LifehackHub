@@ -1,10 +1,22 @@
 <script>
+import { onMounted, watch } from 'vue'
 import { useTheme } from 'vuetify'
 
 export default {
   name: 'MainAppBar',
   setup() {
     const theme = useTheme()
+
+    const applyBodyTheme = () => {
+      const body = document.body
+      if (!body) return
+      const isLight = theme.global.name.value === 'light'
+      body.classList.toggle('light-mode', isLight)
+      body.classList.toggle('dark-mode', !isLight)
+    }
+
+    onMounted(applyBodyTheme)
+    watch(() => theme.global.name.value, applyBodyTheme)
 
     const toggleTheme = () => {
       theme.global.name.value = theme.global.name.value === 'light' ? 'dark' : 'light'
@@ -38,7 +50,7 @@ export default {
 </script>
 
 <template>
-  <v-app-bar color="primary" elevation="2">
+  <v-app-bar color="surface" elevation="0" class="rounded-app-bar">
     <v-app-bar-title class="d-flex align-center">
       <v-icon class="mr-2">mdi-lightbulb-on-outline</v-icon>
       <span class="font-weight-bold">LifehackHub</span>
@@ -88,4 +100,10 @@ export default {
 </template>
 
 <style scoped>
+.rounded-app-bar {
+  border-radius: 0 0 28px 28px;
+  background-color: var(--lhh-appbar-bg) !important;
+  border-bottom: 1px solid var(--lhh-appbar-border);
+  backdrop-filter: blur(10px);
+}
 </style>

@@ -13,13 +13,13 @@ export const getCategoryIcon = (category) => {
 
 export const getCategoryColor = (category) => {
   const colors = {
-    productivity: 'blue',
-    health: 'red',
-    technology: 'purple',
-    home: 'green',
-    study: 'orange',
-    finance: 'teal',
-    psychology: 'pink'
+    productivity: '#7bc4c4',
+    health: '#ff9ba8',
+    technology: '#a997ff',
+    home: '#8bd4b5',
+    study: '#f3c87c',
+    finance: '#7ddbc0',
+    psychology: '#d5a9e3'
   }
   return colors[category] || 'grey'
 }

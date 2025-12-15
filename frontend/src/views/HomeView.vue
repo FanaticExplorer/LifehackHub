@@ -105,11 +105,15 @@ export default {
   cursor: pointer;
   transition: all 0.2s ease;
   border-left: 4px solid transparent;
+  border-radius: 24px;
+  background: var(--lhh-category-gradient);
+  box-shadow: var(--lhh-card-shadow);
 }
 
 .category-card:hover {
   border-left-color: rgb(var(--v-theme-primary));
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: var(--lhh-card-hover-shadow);
 }
 
 .category-card:hover .v-icon {

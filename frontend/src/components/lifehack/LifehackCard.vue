@@ -78,11 +78,15 @@ export default {
   display: flex;
   flex-direction: column;
   border-left: 4px solid transparent;
+  border-radius: 24px;
+  background: var(--lhh-card-gradient);
+  box-shadow: var(--lhh-card-shadow);
 }
 
 .lifehack-card:hover {
   border-left-color: rgb(var(--v-theme-primary));
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: var(--lhh-card-hover-shadow);
 }
 
 .line-clamp-3 {
