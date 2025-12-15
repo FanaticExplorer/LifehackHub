@@ -4,6 +4,8 @@ Lifehack Hub is my semester project for the Frontendové technológie course. I 
 
 Live demo: https://uni-vue.fanaticexplorer.dev
 
+Note: *I know, that git history here is a huge mess. I'm terribly sorry for that...*
+
 ## Tech stack
 
 - Vue 3 (Options API) with Pinia state management and Vue Router.
