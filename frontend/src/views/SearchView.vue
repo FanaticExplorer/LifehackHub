@@ -9,15 +9,7 @@
           Find the perfect lifehack for your needs
         </p>
         
-        <v-text-field
-          v-model="searchQuery"
-          label="Search lifehacks..."
-          prepend-inner-icon="mdi-magnify"
-          variant="outlined"
-          clearable
-          class="mb-5 search-field"
-          color="primary"
-        ></v-text-field>
+        <SearchBar v-model="searchQuery" class="mb-5" />
       </v-col>
     </v-row>
 
@@ -82,9 +74,14 @@
 <script>
 import { useLifehacksStore } from '../stores/lifehacksStore'
 import { useSearchStore } from '../stores/searchStore'
+import SearchBar from '../components/common/SearchBar.vue'
 
 export default {
   name: 'SearchView',
+  
+  components: {
+    SearchBar
+  },
   
   data() {
     return {
@@ -158,11 +155,6 @@ export default {
 </script>
 
 <style scoped>
-.search-field {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 .result-item {
   cursor: pointer;
   transition: background-color 0.2s ease;
