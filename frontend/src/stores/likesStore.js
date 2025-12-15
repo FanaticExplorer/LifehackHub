@@ -1,9 +1,11 @@
 import { defineStore } from 'pinia'
 
+const STORAGE_KEY = 'lifehack-favorites'
+
 export const useLikesStore = defineStore('likes', {
   state: () => {
     return {
-      likedIds: []
+      likedIds: loadFromLocalStorage()
     }
   },
 
@@ -41,6 +43,34 @@ export const useLikesStore = defineStore('likes', {
       } else {
         this.likedIds.splice(index, 1)
       }
+      
+      saveToLocalStorage(this.likedIds)
+    },
+
+    clearAllFavorites() {
+      this.likedIds = []
+      saveToLocalStorage(this.likedIds)
     }
   }
 })
+
+function loadFromLocalStorage() {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY)
+    if (stored) {
+      const parsed = JSON.parse(stored)
+      return Array.isArray(parsed) ? parsed : []
+    }
+  } catch (error) {
+    console.error('Error loading favorites from localStorage:', error)
+  }
+  return []
+}
+
+function saveToLocalStorage(likedIds) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(likedIds))
+  } catch (error) {
+    console.error('Error saving favorites to localStorage:', error)
+  }
+}

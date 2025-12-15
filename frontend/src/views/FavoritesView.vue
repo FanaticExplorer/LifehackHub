@@ -13,10 +13,21 @@
 
     <v-row v-if="favoriteLifehacks.length > 0">
       <v-col cols="12">
-        <h2 class="text-h5 mb-4">
-          <v-icon class="mr-2" color="red">mdi-heart</v-icon>
-          {{ favoriteLifehacks.length }} Favorite{{ favoriteLifehacks.length !== 1 ? 's' : '' }}
-        </h2>
+        <div class="d-flex justify-space-between align-center mb-4">
+          <h2 class="text-h5">
+            <v-icon class="mr-2" color="red">mdi-heart</v-icon>
+            {{ favoriteLifehacks.length }} Favorite{{ favoriteLifehacks.length !== 1 ? 's' : '' }}
+          </h2>
+          
+          <v-btn
+            color="red"
+            variant="outlined"
+            prepend-icon="mdi-delete"
+            @click="clearAllFavorites"
+          >
+            Clear All
+          </v-btn>
+        </div>
         
         <v-card elevation="2">
           <v-list>
@@ -118,6 +129,12 @@ export default {
 
     toggleLike(id) {
       this.likesStore.toggleLike(id)
+    },
+
+    clearAllFavorites() {
+      if (confirm('Are you sure you want to clear all favorites? This action cannot be undone.')) {
+        this.likesStore.clearAllFavorites()
+      }
     },
 
     getCategoryIcon(category) {
