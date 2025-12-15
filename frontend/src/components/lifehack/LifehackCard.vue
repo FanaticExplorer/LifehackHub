@@ -13,8 +13,8 @@
     
     <v-divider></v-divider>
     
-    <v-card-text class="py-4">
-      {{ content.substring(0, 120) }}...
+    <v-card-text class="py-4 line-clamp-3">
+      {{ content }}
     </v-card-text>
     
     <v-card-actions class="px-4 pb-4">
@@ -30,7 +30,6 @@
         :icon="isLiked ? 'mdi-heart' : 'mdi-heart-outline'"
         :color="isLiked ? 'red' : 'grey'"
         variant="text"
-        size="small"
         @click.stop="$emit('toggle-like')"
       ></v-btn>
     </v-card-actions>
@@ -38,6 +37,8 @@
 </template>
 
 <script>
+import { getCategoryIcon, getCategoryColor } from '../../utils/categoryHelpers'
+
 export default {
   name: 'LifehackCard',
 
@@ -63,31 +64,8 @@ export default {
   emits: ['toggle-like'],
 
   methods: {
-    getCategoryIcon(category) {
-      const icons = {
-        productivity: 'mdi-lightning-bolt',
-        health: 'mdi-heart-pulse',
-        technology: 'mdi-laptop',
-        home: 'mdi-home',
-        study: 'mdi-book-open-page-variant',
-        finance: 'mdi-cash',
-        psychology: 'mdi-brain'
-      }
-      return icons[category] || 'mdi-star'
-    },
-
-    getCategoryColor(category) {
-      const colors = {
-        productivity: 'blue',
-        health: 'red',
-        technology: 'purple',
-        home: 'green',
-        study: 'orange',
-        finance: 'teal',
-        psychology: 'pink'
-      }
-      return colors[category] || 'grey'
-    }
+    getCategoryIcon,
+    getCategoryColor
   }
 }
 </script>
@@ -105,5 +83,12 @@ export default {
 .lifehack-card:hover {
   border-left-color: rgb(var(--v-theme-primary));
   transform: translateY(-4px);
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 </style>

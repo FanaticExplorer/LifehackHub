@@ -11,6 +11,7 @@ export default {
     }
 
     return {
+      theme,
       toggleTheme
     }
   },
@@ -49,6 +50,7 @@ export default {
       variant="text"
     >
       <v-icon>mdi-home</v-icon>
+      <v-tooltip activator="parent" location="bottom">Home</v-tooltip>
     </v-btn>
     <v-btn 
       icon 
@@ -56,6 +58,7 @@ export default {
       variant="text"
     >
       <v-icon>mdi-dice-5</v-icon>
+      <v-tooltip activator="parent" location="bottom">Random Lifehack</v-tooltip>
     </v-btn>
     <v-btn 
       icon 
@@ -63,6 +66,7 @@ export default {
       variant="text"
     >
       <v-icon>mdi-magnify</v-icon>
+      <v-tooltip activator="parent" location="bottom">Search</v-tooltip>
     </v-btn>
     <v-btn 
       icon 
@@ -70,13 +74,15 @@ export default {
       variant="text"
     >
       <v-icon>mdi-heart</v-icon>
+      <v-tooltip activator="parent" location="bottom">Favorites</v-tooltip>
     </v-btn>
     <v-btn 
       icon 
       @click="toggleTheme" 
       variant="text"
     >
-      <v-icon>mdi-theme-light-dark</v-icon>
+      <v-icon>{{ theme.global.name.value === 'dark' ? 'mdi-weather-night' : 'mdi-weather-sunny' }}</v-icon>
+      <v-tooltip activator="parent" location="bottom">Toggle Theme</v-tooltip>
     </v-btn>
   </v-app-bar>
 </template>

@@ -69,6 +69,7 @@
 
 <script>
 import { useLifehacksStore } from '../stores/lifehacksStore'
+import { getCategoryIcon, getCategoryColor } from '../utils/categoryHelpers'
 
 export default {
   name: 'HomeView',
@@ -93,31 +94,8 @@ export default {
       return lifehacks.length
     },
 
-    getCategoryIcon(category) {
-      const icons = {
-        productivity: 'mdi-lightning-bolt',
-        health: 'mdi-heart-pulse',
-        technology: 'mdi-laptop',
-        home: 'mdi-home',
-        study: 'mdi-book-open-page-variant',
-        finance: 'mdi-cash',
-        psychology: 'mdi-brain'
-      }
-      return icons[category] || 'mdi-star'
-    },
-
-    getCategoryColor(category) {
-      const colors = {
-        productivity: 'blue',
-        health: 'red',
-        technology: 'purple',
-        home: 'green',
-        study: 'orange',
-        finance: 'teal',
-        psychology: 'pink'
-      }
-      return colors[category] || 'grey'
-    }
+    getCategoryIcon,
+    getCategoryColor
   }
 }
 </script>
@@ -132,5 +110,10 @@ export default {
 .category-card:hover {
   border-left-color: rgb(var(--v-theme-primary));
   transform: translateY(-4px);
+}
+
+.category-card:hover .v-icon {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
 }
 </style>
