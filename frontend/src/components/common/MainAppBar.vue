@@ -4,9 +4,13 @@ import { useTheme } from 'vuetify'
 export default {
   name: 'MainAppBar',
 
+  setup() {
+    const theme = useTheme()
+    return { theme }
+  },
+
   data() {
     return {
-      theme: null,
       isDark: true
     }
   },
@@ -18,7 +22,6 @@ export default {
   },
 
   mounted() {
-    this.theme = useTheme()
     this.isDark = this.theme.global.name.value === 'dark'
     this.applyBodyTheme()
     this.$watch(() => this.theme.global.name.value, () => {
