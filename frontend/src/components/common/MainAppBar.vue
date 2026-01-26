@@ -1,34 +1,46 @@
 <script>
-import { onMounted, watch } from 'vue'
 import { useTheme } from 'vuetify'
 
 export default {
   name: 'MainAppBar',
-  setup() {
-    const theme = useTheme()
 
-    const applyBodyTheme = () => {
-      const body = document.body
-      if (!body) return
-      const isLight = theme.global.name.value === 'light'
-      body.classList.toggle('light-mode', isLight)
-      body.classList.toggle('dark-mode', !isLight)
-    }
-
-    onMounted(applyBodyTheme)
-    watch(() => theme.global.name.value, applyBodyTheme)
-
-    const toggleTheme = () => {
-      theme.global.name.value = theme.global.name.value === 'light' ? 'dark' : 'light'
-    }
-
+  data() {
     return {
-      theme,
-      toggleTheme
+      theme: null,
+      isDark: true
     }
   },
-  
+
+  computed: {
+    themeIcon() {
+      return this.isDark ? 'mdi-weather-night' : 'mdi-weather-sunny'
+    }
+  },
+
+  mounted() {
+    this.theme = useTheme()
+    this.isDark = this.theme.global.name.value === 'dark'
+    this.applyBodyTheme()
+    this.$watch(() => this.theme.global.name.value, () => {
+      this.isDark = this.theme.global.name.value === 'dark'
+      this.applyBodyTheme()
+    })
+  },
+
   methods: {
+    applyBodyTheme() {
+      const body = document.body
+      if (!body || !this.theme) return
+      const isLight = this.theme.global.name.value === 'light'
+      body.classList.toggle('light-mode', isLight)
+      body.classList.toggle('dark-mode', !isLight)
+    },
+
+    toggleTheme() {
+      if (!this.theme) return
+      this.theme.global.name.value = this.theme.global.name.value === 'light' ? 'dark' : 'light'
+    },
+
     goToHome() {
       this.$router.push('/')
     },
@@ -93,7 +105,7 @@ export default {
       @click="toggleTheme" 
       variant="text"
     >
-      <v-icon>{{ theme.global.name.value === 'dark' ? 'mdi-weather-night' : 'mdi-weather-sunny' }}</v-icon>
+      <v-icon>{{ themeIcon }}</v-icon>
       <v-tooltip activator="parent" location="bottom">Toggle Theme</v-tooltip>
     </v-btn>
   </v-app-bar>
